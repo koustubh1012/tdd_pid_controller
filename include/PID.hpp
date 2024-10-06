@@ -29,11 +29,13 @@ class PID {
 
    public:
    
-   PID(double, double, double, double, double, double, double, double, double, 
-   double, double, double, double, double, double, double, double, double);
-   void set_target(double, double);
-   void tune_PID(double, double, double);
+PID(double curr_x, double curr_y, double d_t, double dist, double thresh, 
+         double vel_x, double vel_y, double curr_err_x, double prev_err_x,
+         double acc_err_x, double curr_err_y, double prev_err_y, 
+         double acc_err_y);
+   void set_target(double targ_x, double targ_y);
+   void tune_PID(double K_p, double K_i, double K_d);
    void move_robot();
-   double compute_velocity(double);
+   double compute_velocity(double pos);
    double update_position();
 };
