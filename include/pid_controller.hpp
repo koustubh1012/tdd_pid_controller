@@ -2,10 +2,10 @@
 #include <iostream>
 
 /**
- * @brief PID Class Constructor
+ * @brief PIDController Class Constructor
  * 
  */
-class PID {
+class PIDController {
    private:
    
    double current_x;
@@ -29,7 +29,7 @@ class PID {
 
    public:
    
-PID(double curr_x, double curr_y, double d_t, double dist, double thresh, 
+PIDController(double curr_x, double curr_y, double d_t, double dist, double thresh, 
          double vel_x, double vel_y, double curr_err_x, double prev_err_x,
          double acc_err_x, double curr_err_y, double prev_err_y, 
          double acc_err_y);
