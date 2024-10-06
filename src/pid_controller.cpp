@@ -1,5 +1,4 @@
-#include "../include/PID.hpp"
-#include "PID.hpp"
+#include "pid_controller.hpp"
 #include <cmath>
 #include <iostream>
 
