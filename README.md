@@ -22,7 +22,9 @@ The **PID Controller** (Proportional-Integral-Derivative) is used in control sys
 
 ## Class Overview
 
-The `PIDController` class encapsulates the PID control mechanism and tracks key variables such as position, error, and tuning parameters (`Kp`, `Ki`, `Kd`).
+The `PIDController` class encapsulates the PID control mechanism and tracks key variables such as position, error, and tuning parameters (`Kp`, `Ki`, `Kd`). Here is the Class UML diagram
+
+![UML_diagram](class_uml_diag.png)
 
 ### Attributes
 
