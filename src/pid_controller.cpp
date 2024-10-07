@@ -3,25 +3,22 @@
 #include <iostream>
 
 // Constructor initializing the member variables
-PIDController::PIDController(double curr_x, double curr_y, double d_t, double dist, double thresh, 
-         double vel_x, double vel_y, 
-         double curr_err_x, double prev_err_x, double acc_err_x, 
-         double curr_err_y, double prev_err_y, double acc_err_y) {
+PIDController::PIDController(double robot_x, double robot_y, double d_t, double thresh) {
 
     // Initialize member variables with constructor parameters
-    current_x = curr_x;
-    current_y = curr_y;
+    current_x = robot_x;
+    current_y = robot_y;
     delta_t = d_t;
-    distance = dist;
+    distance = 0;
     threshold = thresh;
-    calculated_velocity_x = vel_x;
-    calculated_velocity_y = vel_y;
-    current_error_x = curr_err_x;
-    previous_error_x = prev_err_x;
-    accumulated_error_x = acc_err_x;
-    current_error_y = curr_err_y;
-    previous_error_y = prev_err_y;
-    accumulated_error_y = acc_err_y;
+    calculated_velocity_x = 0;
+    calculated_velocity_y = 0;
+    current_error_x = 0;
+    previous_error_x = 0;
+    accumulated_error_x = 0;
+    current_error_y = 0;
+    previous_error_y = 0;
+    accumulated_error_y = 0;
 }
 
 // Set the target position
@@ -52,3 +49,5 @@ double PIDController::update_position() {
     double new_position = 1.0;
     return new_position;
 }
+
+
