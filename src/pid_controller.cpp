@@ -1,6 +1,7 @@
 #include "pid_controller.hpp"
 #include <cmath>
 #include <iostream>
+#include <vector>
 
 // Constructor initializing the member variables
 PIDController::PIDController(double robot_x, double robot_y, double d_t, double thresh) {
@@ -35,7 +36,8 @@ void PIDController::tune_PID(double K_p, double K_i, double K_d) {
 }
 
 // Move the robot based on calculated velocities (this should implement PID control logic)
-void PIDController::move_robot() {
+std::vector<double> PIDController::move_robot() {
+    return std::vector<double> {10.0, 10.0};  // placeholder
 }
 
 // Compute the velocity based on the PID formula
