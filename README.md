@@ -96,7 +96,7 @@ void update_position();
 Moves the robot towards the target by calling `compute_velocity()` for both x and y directions, and then updating the position with `update_position()`.
 
 ```cpp
-void move_robot();
+vector<double> move_robot();
 ```
 
 ## Usage
@@ -104,7 +104,7 @@ void move_robot();
 1. Create an instance of `PIDController`.
 2. Set the target using `set_target()`.
 3. Tune the PID gains using `tune_PID()`.
-4. Call `move_robot()` in a loop to compute the velocities and move the robot incrementally towards the target.
+4. Call `move_robot()` in a compute the velocities and move the robot incrementally towards the target. The function returns the final coordinates of the robot as a vector
 
 ## Example
 
@@ -115,11 +115,9 @@ int main() {
     controller.set_target(10.0, 15.0);
     controller.tune_PID(1.0, 0.1, 0.05);
 
-    while (controller.distance > controller.threshold) {
-        controller.move_robot();
-    }
-
-    std::cout << "Robot reached the target!" << std::endl;
+    std::vector<double> robot_state;
+    robot_state = controller.move_robot();
+    std::cout << "Robot reached the target!" << robot_state[0] <<" "<<robot_state[1];
     
     return 0;
 }
