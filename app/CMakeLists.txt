@@ -17,6 +17,7 @@ target_link_libraries(shell-app PUBLIC
   # list of libraries
   myLib1
   myLib2
+  pid_controller
   )
 
 target_link_options(shell-app PUBLIC
