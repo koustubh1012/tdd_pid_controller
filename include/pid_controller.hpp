@@ -55,7 +55,7 @@ class PIDController {
     */
    double target_y;
    /**
-    * @brief Proportionl gain
+    * @brief Proportional gain
     * 
     */
    double Kp;
@@ -113,9 +113,8 @@ class PIDController {
    /**
     * @brief Function to update coordinates in 1 dimension
     * 
-    * @return double 
     */
-   double update_position();
+   void update_position();
 
    public:
 
@@ -156,8 +155,6 @@ class PIDController {
    /**
     * @brief Computes the velocity in 1 direction using PID
     * 
-    * @param pos The current position of robot in 1 dimension
-    * @return double Thee calculate velocity of the robot
     */
-   double compute_velocity(double pos);
+   void compute_velocity();
 };

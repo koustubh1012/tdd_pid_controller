@@ -41,15 +41,13 @@ std::vector<double> PIDController::move_robot() {
 }
 
 // Compute the velocity based on the PID formula
-double PIDController::compute_velocity(double pos) {
+void PIDController::compute_velocity() {
     double velocity = 10.0; //placeholder
-    return velocity;
 }
 
-
-double PIDController::update_position() {
+// update the current x and y position according to calculated velocity
+void PIDController::update_position() {
     double new_position = 1.0;
-    return new_position;
 }
 
 
