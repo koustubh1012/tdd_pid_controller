@@ -65,7 +65,10 @@ void PIDController::compute_velocity() {
 
 // update the current x and y position according to calculated velocity
 void PIDController::update_position() {
-    double new_position = 1.0;
+    
+    // Updating the current x and y positions
+    current_x += calculated_velocity_x*delta_t;
+    current_y += calculated_velocity_y*delta_t;
 }
 
 
