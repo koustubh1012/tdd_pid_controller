@@ -1,5 +1,11 @@
 ![CICD Workflow status](https://github.com/koustubh1012/tdd_pid_controller/actions/workflows/run-unit-test-and-upload-codecov.yml/badge.svg)[![codecov](https://codecov.io/gh/koustubh1012/tdd_pid_controller/graph/badge.svg?token=DEQJ1BYKE9)](https://codecov.io/gh/koustubh1012/tdd_pid_controller) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+# Author:
+- Mohammed Munawwar (Navigator)
+- FNU Koustubh (Driver)
+- Sachin Jadhav (Navigator)
+- Tathya Bhatt (Driver)
+
 # PID Controller for Mobile Robot
 
 This project is designed to create a **PID Controller** that computes velocities in the x and y directions to help control a mobile robot. The controller computes the velocity based on the robot's current position and the target position, adjusting its velocity as per the PID control algorithm.

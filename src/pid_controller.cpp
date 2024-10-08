@@ -37,17 +37,52 @@ void PIDController::tune_PID(double K_p, double K_i, double K_d) {
 
 // Move the robot based on calculated velocities (this should implement PID control logic)
 std::vector<double> PIDController::move_robot() {
-    return std::vector<double> {10.0, 10.0};  // placeholder
+   
+    double diffx = current_x - target_x;
+    double diffy = current_y - target_y;
+    distance = std::sqrt(diffx*diffx + diffy * diffy);
+
+    while(distance>threshold){
+        compute_velocity();
+        update_position();
+        double diffx = current_x - target_x;
+        double diffy = current_y - target_y;
+        distance = std::sqrt(diffx*diffx + diffy * diffy);
+
+    };
+
+    return std::vector<double> {current_x, current_y};
 }
 
 // Compute the velocity based on the PID formula
 void PIDController::compute_velocity() {
-    double velocity = 10.0; //placeholder
+
+    // Calculating the proportional error
+    current_error_x = target_x - current_x;
+    current_error_y = target_y - current_y;
+
+    // Calculating the integral error
+    accumulated_error_x +=  current_error_x * delta_t;
+    accumulated_error_y += current_error_y * delta_t;
+
+    // Calculating the derivative error
+    double der_errx = (current_error_x - previous_error_x) / delta_t;
+    double der_erry = (current_error_y - previous_error_y) / delta_t;
+
+    // Adding all the terms
+    calculated_velocity_x = Kp * current_error_x + Ki * accumulated_error_x + Kd * der_errx;
+    calculated_velocity_y = Kp * current_error_y + Ki * accumulated_error_y + Kd * der_erry;
+
+    previous_error_x = current_error_x;
+    previous_error_y = current_error_y;
 }
 
 // update the current x and y position according to calculated velocity
 void PIDController::update_position() {
-    double new_position = 1.0;
+
+    // Updating the current x and y positions
+    current_x += calculated_velocity_x*delta_t;
+    current_y += calculated_velocity_y*delta_t;
 }
 
 
