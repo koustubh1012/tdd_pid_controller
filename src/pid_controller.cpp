@@ -1,3 +1,5 @@
+// Copyright 2024 <Tathya>
+
 #include "pid_controller.hpp"
 
 #include <cmath>
