@@ -23,6 +23,7 @@ This project is designed to create a **PID Controller** that computes velocities
   - [move_robot()](#move_robot)
 - [Usage](#usage)
 - [Example](#example)
+- [Building and Running](#building_and_running)
 
 ## Introduction
 
@@ -132,3 +133,37 @@ int main() {
 ```
 
 This example shows how to initialize a `PIDController`, set the target, tune the PID gains, and move the robot towards the target. The loop will keep running until the robot reaches the target within the threshold.
+
+# Building and Running
+
+```
+# Download the code:
+  git clone https://github.com/koustubh1012/tdd_pid_controller.git
+  cd tdd_pid_controller/
+# Configure the project and generate a native build system:\changed.
+  cmake -S ./ -B build/
+# Compile and build the project:
+# rebuild only files that are modified since the last build
+  cmake --build build/
+# or rebuild everything from scracth
+  cmake --build build/ --clean-first
+# to see verbose output, do:
+  cmake --build build/ --verbose
+# Run program:
+  ./build/app/shell-app
+# Run tests:
+  cd build/; ctest; cd -
+# or if you have newer cmake
+  ctest --test-dir build/
+```
+## Doxygen Documentation
+```
+# Build docs:
+  cmake --build build/ --target docs
+# open a web browser to browse the doc
+  open docs/html/index.html
+# Clean
+  cmake --build build/ --target clean
+# Clean and start over:
+  rm -rf build/
+```
