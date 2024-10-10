@@ -1,3 +1,5 @@
+// Copyright 2024 <Tathya>
+
 #include <cmath>
 #include <iostream>
 #include <vector>
